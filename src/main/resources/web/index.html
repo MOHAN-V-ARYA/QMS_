@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <title>Delivery Quality OS — Logistics and Delivery Management System</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/responsive.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail" aria-label="Primary navigation">
+      <a class="brand" href="#" data-page="overview" aria-label="Delivery Quality OS home">
+        <span class="brand-mark">dq<span>.</span></span><span class="brand-copy">QUALITY<br><b>OPERATIONS</b></span>
+      </a>
+      <div class="workspace-label">PROJECT WORKSPACE</div>
+      <div class="project-switch"><span class="project-square">LD</span><span>Logistics &amp; Delivery Management<small>LDMS · Quality workspace</small></span><span class="chevron">⌄</span></div>
+      <section class="team-roster" aria-label="Project development team"><div class="team-roster-title">PROJECT TEAM</div><div><b>Mohan V</b><span>Software Engineer I</span></div><div><b>Nruthya</b><span>Software Engineer II</span></div><div><b>Sinchana</b><span>Software Engineer III</span></div></section>
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="menu-icon" aria-hidden="true">☰</span><span class="menu-label">Menu</span><span class="sr-only">Toggle primary navigation</span></button>
+      <nav class="nav" id="primary-navigation" aria-label="Primary navigation">
+        <button class="nav-link active" data-page="overview"><span class="nav-icon">◫</span>Overview<span class="nav-count">01</span></button>
+        <div class="nav-section">QUALITY SYSTEM</div>
+        <button class="nav-link" data-page="requirements"><span class="nav-icon">⌗</span>Requirements<span class="nav-count" id="nav-req-count">08</span></button>
+        <button class="nav-link" data-page="reviews"><span class="nav-icon">▤</span>Reviews &amp; controls</button>
+        <button class="nav-link" data-page="verification"><span class="nav-icon">✓</span>Execution &amp; verification</button>
+        <button class="nav-link" data-page="measures"><span class="nav-icon">⌁</span>Measures &amp; reports</button>
+        <button class="nav-link" data-page="release"><span class="nav-icon">◉</span>Release readiness<span class="nav-alert"></span></button>
+        <button class="nav-link" data-page="improvement"><span class="nav-icon">↗</span>Improvement</button>
+        <div class="nav-section">REFERENCE</div>
+        <button class="nav-link" data-page="documents"><span class="nav-icon">▧</span>QMS documents</button>
+      </nav>
+      <div class="rail-bottom">
+        <div class="avatar" id="active-user-initials">—</div><div class="user-meta"><span id="active-user-name">Loading profile</span><small id="active-user-title">Project team</small></div><button class="dots" aria-label="Account options">···</button>
+        <div class="rail-footnote"><span class="status-dot"></span>Workspace synced <span>·</span> Local DB</div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="breadcrumb">PROJECTS <span>/</span> LOGISTICS &amp; DELIVERY MANAGEMENT <span>/</span> <b id="crumb-current">OVERVIEW</b></div><div class="top-actions"><span class="top-date" id="today-label">MON, 09 NOV 2026</span><button class="icon-button" id="refresh-btn" aria-label="Refresh data">↻</button><button class="help-button">Quality handbook <span>↗</span></button></div></header>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <section class="page active" id="page-overview">
+        <div class="page-heading"><div><div class="eyebrow"><span class="live-dot"></span>QUALITY PULSE <span class="eyebrow-divider">/</span> 09 NOVEMBER 2026</div><h1>Building systems<br>that learn, count,<br>and hold up</h1><p class="lede">A clear view of quality, from the first requirement to release.</p></div><button class="button button-primary" data-action="new-requirement"><span>＋</span> New requirement</button></div>
+        <div class="lifecycle-panel">
+          <div class="lifecycle-top"><div><span class="eyebrow">DELIVERY LIFECYCLE</span><div class="ribbon-caption">Quality is moving. <b>Integration verification is the current constraint.</b></div></div><div class="gate-pill"><span class="gate-mark" id="gate-mark">!</span><span><b>RELEASE GATE</b><small id="gate-summary">Checking release checks…</small></span><span class="gate-arrow">↗</span></div></div>
+          <div class="lifecycle" id="lifecycle"></div>
+          <div class="lifecycle-foot"><span>PLANNED <b>7 stages</b></span><span><i></i> CURRENT FOCUS <b>EXECUTE / VERIFY</b></span><span>RELEASE TARGET <b>24 Nov 2026</b></span></div>
+        </div>
+        <div class="metrics-row">
+          <article class="metric metric-main"><div class="metric-label">OPEN DEFECTS <span class="metric-tag danger">2 HIGH RISK</span></div><div class="metric-number" id="metric-defects">—</div><div class="metric-foot"><span><span id="metric-critical">—</span> critical unresolved</span><span class="metric-trend">Current snapshot</span></div></article>
+          <article class="metric"><div class="metric-label">TEST PASS RATE <span class="metric-tag neutral">INTEGRATION</span></div><div class="metric-number"><span id="metric-pass">—</span><small>%</small></div><div class="metric-foot"><span id="metric-tests">Loading execution</span><span class="metric-trend">Current snapshot</span></div><div class="progress-track"><span id="pass-track"></span></div></article>
+          <article class="metric"><div class="metric-label">REQ. COVERAGE <span class="metric-tag neutral">TRACEABLE</span></div><div class="metric-number"><span id="metric-coverage">—</span><small>%</small></div><div class="metric-foot"><span id="metric-req">Loading requirements</span><span class="metric-trend">Current snapshot</span></div><div class="progress-track blue-track"><span id="coverage-track"></span></div></article>
+          <article class="metric review-metric"><div class="metric-label">REVIEWS DUE <span class="metric-tag amber-tag">THIS WEEK</span></div><div class="metric-number" id="metric-reviews">—</div><div class="metric-foot"><span>Across 3 workstreams</span><button class="text-action" data-page="reviews">View queue <span>→</span></button></div></article>
+        </div>
+        <div class="dashboard-grid">
+          <section class="panel stage-panel"><div class="section-head"><div><div class="eyebrow">QUALITY HOTSPOTS</div><h2>Where attention matters</h2></div><button class="quiet-action" data-page="verification">Open verification <span>→</span></button></div>
+            <div class="hotspot"><div class="hotspot-rank">01</div><div class="hotspot-content"><div class="hotspot-title">Status event ordering</div><div class="hotspot-sub">Driver app · state transition integrity</div><div class="hotspot-bar"><span style="width:82%"></span></div></div><div class="hotspot-value red-text">1 <small>critical</small></div><button class="row-arrow" data-page="verification">↗</button></div>
+            <div class="hotspot"><div class="hotspot-rank">02</div><div class="hotspot-content"><div class="hotspot-title">Route provider resilience</div><div class="hotspot-sub">Route API · backoff &amp; degraded mode</div><div class="hotspot-bar amber-bar"><span style="width:56%"></span></div></div><div class="hotspot-value amber-text">1 <small>high</small></div><button class="row-arrow" data-page="verification">↗</button></div>
+            <div class="hotspot"><div class="hotspot-rank">03</div><div class="hotspot-content"><div class="hotspot-title">Customer notifications</div><div class="hotspot-sub">Async worker · delivery confirmation</div><div class="hotspot-bar green-bar"><span style="width:31%"></span></div></div><div class="hotspot-value">1 <small>medium</small></div><button class="row-arrow" data-page="verification">↗</button></div>
+            <div class="panel-foot">RISK SIGNALS BY REQUIREMENT <span class="legend"><i class="legend-red"></i>High <i class="legend-amber"></i>In review <i class="legend-green"></i>Stable</span></div>
+          </section>
+          <section class="panel activity-panel"><div class="section-head"><div><div class="eyebrow">PROJECT STREAM</div><h2>Recent activity</h2></div><button class="quiet-action" id="activity-refresh">Live feed <span class="activity-live"></span></button></div><div class="activity-list" id="activity-list"></div><button class="activity-more" data-page="measures">See all project updates <span>→</span></button></section>
+        </div>
+        <div class="bottom-strip"><span class="strip-icon">i</span><b>Next quality checkpoint</b><span>Customer SRS walkthrough</span><span class="strip-date">13 Nov · 14:00 UTC</span><button data-page="reviews">Review agenda <span>→</span></button></div>
+      </section>
+      <section class="page" id="page-requirements">
+        <div class="page-heading compact-heading"><div><div class="eyebrow">DEFINE / BASELINE</div><h1>Requirements<span class="period">.</span></h1><p class="lede">Testable promises, linked through design, execution, and defects.</p></div><button class="button button-primary" data-action="new-requirement"><span>＋</span> Add requirement</button></div>
+        <div class="toolbar"><div class="filter-tabs" id="req-filters"><button class="selected" data-filter="All">All <span id="req-total">0</span></button><button data-filter="In review">In review</button><button data-filter="Draft">Draft</button><button data-filter="Approved">Approved</button></div><div class="toolbar-right"><input class="search-input" id="req-search" type="search" placeholder="Search requirements…" aria-label="Search requirements"><button class="button button-outline" id="export-rtm">↓ Export RTM</button></div></div>
+        <div class="table-wrap"><table><thead><tr><th>REQUIREMENT</th><th>RISK / TYPE</th><th>OWNER</th><th>DESIGN LINK</th><th>TEST LINK</th><th>STATUS</th><th></th></tr></thead><tbody id="requirements-body"></tbody></table><div class="empty-state" id="req-empty" hidden>No requirements match this filter. Try another search, or add a requirement.</div></div>
+        <div class="table-note"><span>↔</span> Every requirement should trace to a design decision and at least one verification case.</div>
+      </section>
+      <section class="page" id="page-reviews">
+        <div class="page-heading compact-heading"><div><div class="eyebrow">CONTROL POINTS / PEER ASSURANCE</div><h1>Reviews &amp; controls<span class="period">.</span></h1><p class="lede">Evidence-based sign-off before work moves downstream.</p></div><button class="button button-primary" data-action="new-review"><span>＋</span> Schedule review</button></div>
+        <div class="review-banner"><span class="banner-symbol">◎</span><div><b>Review authority follows the artifact.</b><span>PM owns the schedule · Architect accepts design and interfaces · Test Manager accepts readiness · Customer signs requirements · CCB approves baseline change.</span></div></div>
+        <div class="review-list" id="reviews-list"></div>
+        <div class="responsibility-panel"><div class="section-head"><div><div class="eyebrow">SIGN-OFF ROUTING</div><h2>Who approves what</h2></div><span class="subtle">RACI · A = accountable</span></div><div class="raci-grid"><div class="raci-head">DELIVERABLE</div><div class="raci-head">PREPARE</div><div class="raci-head">REVIEW</div><div class="raci-head">APPROVE</div><div>SRS &amp; requirement baseline</div><div>BA Team</div><div>PM · Architect · Test Mgr</div><div class="raci-accountable">Customer / CDO</div><div>API contract &amp; architecture</div><div>Technical Architect</div><div>Developer · Test Mgr</div><div class="raci-accountable">Technical Architect</div><div>Change request</div><div>Request owner</div><div>BA · PM · Architect · Test</div><div class="raci-accountable">CCB</div><div>Release authorization</div><div>PM · Test Manager</div><div>Architect · Customer</div><div class="raci-accountable">CEO (business release)</div></div></div>
+      </section>
+      <section class="page" id="page-verification">
+        <div class="page-heading compact-heading"><div><div class="eyebrow">EXECUTE / VERIFY</div><h1>Execution &amp; verification<span class="period">.</span></h1><p class="lede">Run evidence against contracts, states, and real operational risks.</p></div><button class="button button-primary" data-action="new-test"><span>＋</span> Add test case</button></div>
+        <div class="verification-summary"><div><span class="eyebrow">CURRENT CYCLE</span><b>Integration &amp; regression <small>Cycle 04 · 06–13 Nov</small></b></div><div><span>PASS</span><b id="verify-pass">—</b></div><div><span>BLOCKED</span><b id="verify-blocked">—</b></div><div><span>NOT RUN</span><b id="verify-notrun">—</b></div><div><span>DEFECTS OPEN</span><b id="verify-defects">—</b></div></div>
+        <div class="section-head standalone-head"><div><div class="eyebrow">TEST EXECUTION</div><h2>Verification register</h2></div><div class="toolbar-right"><select class="select-input" id="test-filter"><option value="All">All results</option><option>Pass</option><option>Fail</option><option>Blocked</option><option>Not run</option></select></div></div>
+        <div class="table-wrap"><table><thead><tr><th>CASE</th><th>VERIFICATION</th><th>AREA</th><th>OWNER</th><th>REQUIREMENT</th><th>RESULT</th><th></th></tr></thead><tbody id="tests-body"></tbody></table></div>
+        <div class="section-head standalone-head defects-head"><div><div class="eyebrow">NON-CONFORMANCES</div><h2>Defect register <span id="defect-total" class="count-chip">0</span></h2></div><button class="button button-outline" data-action="new-defect">＋ Log defect</button></div>
+        <div class="table-wrap"><table><thead><tr><th>DEFECT</th><th>DESCRIPTION</th><th>CATEGORY</th><th>SEVERITY</th><th>OWNER</th><th>STATUS</th><th></th></tr></thead><tbody id="defects-body"></tbody></table></div>
+      </section>
+      <section class="page" id="page-measures">
+        <div class="page-heading compact-heading"><div><div class="eyebrow">MEASURE / REPORT</div><h1>Quality measures<span class="period">.</span></h1><p class="lede">Leading indicators for a safer release, not vanity metrics.</p></div><button class="button button-primary" id="download-report">↓ Download report</button></div>
+        <div class="report-date">LOGISTICS &amp; DELIVERY MANAGEMENT SYSTEM <span>·</span> PROJECT LDMS <span>·</span> REPORTING PERIOD 06–09 NOVEMBER</div>
+        <div class="measure-grid" id="measure-grid"></div>
+        <div class="panel measure-note"><div class="eyebrow">READ THE SIGNAL</div><h2>Coverage is a starting point, not proof.</h2><p>Confirm each high-risk interface has positive, negative, retry, and recovery evidence. Track escaped defects after release and review reopened issues separately from newly found defects. Review-history and change-impact values are marked as estimates until those events are captured.</p><div class="trendline"><span>DATA LIMITATION</span><b>Historical review and change records are not yet persisted.</b></div></div>
+      </section>
+      <section class="page" id="page-release">
+        <div class="page-heading compact-heading"><div><div class="eyebrow">GOVERN / SHIP</div><h1>Release readiness<span class="period">.</span></h1><p class="lede">A release decision is a set of verifiable conditions, not a calendar date.</p></div><span class="release-state" id="release-state">CHECKING GATE…</span></div>
+        <div class="release-grid"><div class="panel release-check-panel"><div class="section-head"><div><div class="eyebrow">EXIT CRITERIA</div><h2>Release gate checks</h2></div><span class="subtle">Owner: PM + Test Manager</span></div><div id="release-checks" class="checks-list"></div></div><div class="panel approval-panel"><div class="eyebrow">AUTHORIZATION &amp; OPERATIONS</div><h2>Release sign-off</h2><p>Approval is recorded with the accountable authority. Complete rollback and monitoring checks before requesting final authorization.</p><label class="form-label" for="approval-name">APPROVING AUTHORITY</label><input id="approval-name" class="form-input" placeholder="e.g. Customer delegate / CEO" maxlength="120"><label class="toggle-line"><span><b>Rollback plan rehearsed</b><small>Versioned rollback steps and restore point confirmed</small></span><input id="rollback-ready" type="checkbox"><i></i></label><label class="toggle-line"><span><b>Monitoring &amp; alerting verified</b><small>Operational owner and alert routes confirmed</small></span><input id="monitoring-ready" type="checkbox"><i></i></label><button class="button button-primary full-button" id="save-release">Save readiness evidence</button><div class="approval-foot">Customer acceptance required · CEO authorizes business release</div></div></div>
+      </section>
+      <section class="page" id="page-improvement">
+        <div class="page-heading compact-heading"><div><div class="eyebrow">IMPROVE / PREVENT RECURRENCE</div><h1>Corrective actions<span class="period">.</span></h1><p class="lede">Close the loop: contain, correct, learn, and verify effectiveness.</p></div><button class="button button-primary" data-action="new-capa"><span>＋</span> New action</button></div>
+        <div class="capa-callout"><span class="capa-symbol">↗</span><div><b>Effectiveness is evidence.</b><span>Do not close a CAPA until the corrective change passes an independent retest and recurrence has been checked across related interfaces.</span></div></div>
+        <div class="capa-grid" id="capas-list"></div>
+      </section>
+      <section class="page" id="page-documents">
+        <div class="page-heading compact-heading"><div><div class="eyebrow">REFERENCE / CONTROLLED DOCUMENTS</div><h1>QMS library<span class="period">.</span></h1><p class="lede">Project-ready plans, procedures, templates, and checklists.</p></div><span class="doc-version">CONTROLLED SET · REV 1.4</span></div>
+        <div class="doc-intro"><div class="doc-monogram">Q<span>/</span></div><div><b>Logistics and Delivery Management System quality baseline</b><p>Use the project quality plan as the control document. Procedures define how evidence is produced; templates capture the approved record. Review any downloaded copy against the current controlled revision before use.</p></div></div>
+        <div class="doc-grid">
+          <div class="doc-card featured-doc"><span class="doc-type">PLAN <span>01</span></span><span class="doc-title">Project Quality Plan</span><span class="doc-desc">Scope, objectives, quality gates, delivery controls, and responsibility model.</span><span class="doc-download">Download as</span><span class="doc-formats"><a href="/docs/project-quality-plan.docx" download>Word <b>↓</b></a><a href="/docs/project-quality-plan.xlsx" download>Excel <b>↓</b></a></span></div>
+          <div class="doc-card"><span class="doc-type">PROCEDURE <span>02</span></span><span class="doc-title">Requirements development &amp; management</span><span class="doc-desc">Elicit, analyze, baseline, trace, and control change with accountable sign-off.</span><span class="doc-download">Download as</span><span class="doc-formats"><a href="/docs/requirements-development-management-procedure.docx" download>Word <b>↓</b></a><a href="/docs/requirements-development-management-procedure.xlsx" download>Excel <b>↓</b></a></span></div>
+          <div class="doc-card"><span class="doc-type">CHECKLIST <span>03</span></span><span class="doc-title">Requirement review checklist</span><span class="doc-desc">Completeness, testability, risks, interfaces, assumptions, and approvals.</span><span class="doc-download">Download as</span><span class="doc-formats"><a href="/docs/requirements-review-checklist.docx" download>Word <b>↓</b></a><a href="/docs/requirements-review-checklist.xlsx" download>Excel <b>↓</b></a></span></div>
+          <div class="doc-card"><span class="doc-type">TEMPLATE <span>04</span></span><span class="doc-title">Change request form</span><span class="doc-desc">Impact, affected baselines, options, recommendation, CCB decision, and closure.</span><span class="doc-download">Download as</span><span class="doc-formats"><a href="/docs/change-request-form.docx" download>Word <b>↓</b></a><a href="/docs/change-request-form.xlsx" download>Excel <b>↓</b></a></span></div>
+          <div class="doc-card"><span class="doc-type">TEMPLATE <span>05</span></span><span class="doc-title">Requirements traceability matrix</span><span class="doc-desc">Bidirectional path from stakeholder need through design, tests, and defects.</span><span class="doc-download">Download as</span><span class="doc-formats"><a href="/docs/requirements-traceability-matrix.docx" download>Word <b>↓</b></a><a href="/docs/requirements-traceability-matrix.xlsx" download>Excel <b>↓</b></a></span></div>
+          <div class="doc-card"><span class="doc-type">PROCEDURE <span>06</span></span><span class="doc-title">Peer review procedure</span><span class="doc-desc">Entry criteria, preparation, findings, rework, and formal acceptance.</span><span class="doc-download">Download as</span><span class="doc-formats"><a href="/docs/review-procedure.docx" download>Word <b>↓</b></a><a href="/docs/review-procedure.xlsx" download>Excel <b>↓</b></a></span></div>
+          <div class="doc-card"><span class="doc-type">CHECKLIST <span>07</span></span><span class="doc-title">Release readiness checklist</span><span class="doc-desc">Defect, evidence, approval, rollback, monitoring, and operational gates.</span><span class="doc-download">Download as</span><span class="doc-formats"><a href="/docs/release-readiness-checklist.docx" download>Word <b>↓</b></a><a href="/docs/release-readiness-checklist.xlsx" download>Excel <b>↓</b></a></span></div>
+          <div class="doc-card"><span class="doc-type">PROCEDURE <span>08</span></span><span class="doc-title">CAPA procedure</span><span class="doc-desc">Containment, root cause, correction, prevention, effectiveness, recurrence.</span><span class="doc-download">Download as</span><span class="doc-formats"><a href="/docs/capa-procedure.docx" download>Word <b>↓</b></a><a href="/docs/capa-procedure.xlsx" download>Excel <b>↓</b></a></span></div>
+        </div>
+        <div class="doc-footer">Approvals: <b>CDO</b> owns quality direction · <b>CEO</b> authorizes business release · <b>CCB</b> controls baseline changes · <b>Customer</b> accepts requirements.</div>
+      </section>
+      <footer class="app-footer"><span>DELIVERY QUALITY OS <b>·</b> LOGISTICS AND DELIVERY MANAGEMENT SYSTEM</span><span>Quality records persist in SQLite <span class="footer-dot"></span> <a href="/api/health" target="_blank">API status ↗</a></span></footer>
+    </main>
+  </div>
+  <dialog id="record-dialog" class="record-dialog"><form id="record-form"><div class="dialog-top"><div><div class="eyebrow" id="dialog-eyebrow">NEW RECORD</div><h2 id="dialog-title">Add requirement</h2></div><button class="dialog-close" type="button" id="dialog-close" aria-label="Close dialog">×</button></div><div id="form-fields" class="form-fields"></div><div class="dialog-actions"><button class="button button-outline" type="button" id="dialog-cancel">Cancel</button><button class="button button-primary" type="submit">Save record <span>→</span></button></div></form></dialog>
+  <script src="/app.js" defer></script>
+</body>
+</html>

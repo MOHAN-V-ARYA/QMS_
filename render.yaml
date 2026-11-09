@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: delivery-quality-os
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: QMS_DB
+        value: data/qms.db
